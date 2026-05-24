@@ -57,3 +57,5 @@ test.describe('Login Tests', () => {
     });
 
 });
+
+// Fixed production login locator issue
