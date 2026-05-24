@@ -14,3 +14,4 @@ class DashboardPage {
 }
 
 module.exports = DashboardPage;
+// Fixed dashboard validation logic

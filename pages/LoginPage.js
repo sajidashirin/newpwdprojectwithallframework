@@ -8,7 +8,9 @@ class LoginPage {
 
         this.username = '#user-name';
         this.password = '#password';
-        this.loginButton = '#login-button';
+        //this.loginButton = '#login-button';
+        this.loginButton = '#final-login-btn';
+
         this.errorMessage = 'h3[data-test="error"]';
     }
 
