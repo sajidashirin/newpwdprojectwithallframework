@@ -17,3 +17,4 @@ test('GET Users API', async ({ request }) => {
     expect(body.id).toBe(1);
 
 });
+// Added advanced API reporting
