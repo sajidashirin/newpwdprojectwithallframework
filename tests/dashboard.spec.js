@@ -1,7 +1,7 @@
 const { test, expect } = require('../fixtures/authFixture');
 
 
-test('API + UI Combined Example',
+test('@smoke API + UI Combined Example',
 
     async ({ page, authToken }) => {
 

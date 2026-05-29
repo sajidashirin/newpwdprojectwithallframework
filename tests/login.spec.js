@@ -13,7 +13,7 @@ test.describe('Login Tests', () => {
 
     testData.forEach((data) => {
 
-        test(`Login test for ${data.username || 'empty user'}`,
+        test(`@smoke Login test for ${data.username || 'empty user'}`,
 
             async ({ page }) => {
 

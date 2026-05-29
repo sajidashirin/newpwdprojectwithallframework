@@ -2,7 +2,7 @@
 const { test, expect } = require('@playwright/test');
 
 
-test('GET Users API', async ({ request }) => {
+test('@regression GET Users API', async ({ request }) => {
 
     const response = await request.get(
         'https://jsonplaceholder.typicode.com/users/1'
