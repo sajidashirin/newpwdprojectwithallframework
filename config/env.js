@@ -1,15 +1,9 @@
-const ENV = process.env.ENV || 'qa';
+const env = process.env.TEST_ENV || 'qa';
 
-const config = {
-
-    qa: {
-        baseURL: 'https://www.saucedemo.com/'
-    },
-
-    uat: {
-        baseURL: 'https://www.saucedemo.com/'
-    }
-
+const environments = {
+    dev: require('./dev'),
+    qa: require('./qa'),
+    uat: require('./uat')
 };
 
-module.exports = config[ENV];
+module.exports = environments[env];

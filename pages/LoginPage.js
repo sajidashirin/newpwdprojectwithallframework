@@ -15,7 +15,7 @@ class LoginPage {
     }
 
     async goto() {
-        await this.page.goto(config.baseURL);
+        await this.page.goto(config.baseUrl);
     }
 
     async login(username, password) {
