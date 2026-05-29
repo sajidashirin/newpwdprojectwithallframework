@@ -10,6 +10,9 @@ on:
     branches:
       - main
 
+  schedule:
+    - cron: '0 0 * * *'
+
 jobs:
 
   playwright-test:
