@@ -15,6 +15,8 @@ test('GET Users API', async ({ request }) => {
     console.log(body);
 
     expect(body.id).toBe(1);
+    
+    console.log("PR validation pipeline test");
 
 });
 // Added advanced API reporting
