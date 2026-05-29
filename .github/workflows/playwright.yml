@@ -1,6 +1,26 @@
 name: Playwright CI Pipeline
 
 on:
+
+  workflow_dispatch:
+
+    inputs:
+
+      environment:
+
+        description: 'Select Environment'
+
+        required: true
+
+        default: 'qa'
+
+        type: choice
+
+        options:
+          - dev
+          - qa
+          - uat
+
   push:
     branches:
       - main
@@ -36,6 +56,10 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright Tests
+
+        env:
+          TEST_ENV: ${{ github.event.inputs.environment }}
+
         run: npx playwright test
 
       - name: Upload Playwright Report
