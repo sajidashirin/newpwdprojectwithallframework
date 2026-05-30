@@ -55,11 +55,22 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: Set Environment Password
+
+        run: |
+          if [ "${{ github.event.inputs.environment }}" = "dev" ]; then
+            echo "TEST_PASSWORD=${{ secrets.DEV_PASSWORD }}" >> $GITHUB_ENV
+          elif [ "${{ github.event.inputs.environment }}" = "qa" ]; then
+            echo "TEST_PASSWORD=${{ secrets.QA_PASSWORD }}" >> $GITHUB_ENV
+          else
+            echo "TEST_PASSWORD=${{ secrets.UAT_PASSWORD }}" >> $GITHUB_ENV
+          fi
+
       - name: Run Playwright Tests
 
         env:
           TEST_ENV: ${{ github.event.inputs.environment }}
-          SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
+
         run: npx playwright test
 
       - name: Upload Playwright Report

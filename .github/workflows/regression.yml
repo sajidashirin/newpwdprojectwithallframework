@@ -33,5 +33,5 @@ jobs:
 
       - name: Run Regression Tests
         env:
-            SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
+            TEST_PASSWORD: ${{ secrets.QA_PASSWORD }}
         run: npx playwright test --grep "@regression"

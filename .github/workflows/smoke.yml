@@ -30,6 +30,6 @@ jobs:
 
       - name: Run Smoke Tests
         env:
-          SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
+          TEST_PASSWORD: ${{ secrets.QA_PASSWORD }}
 
         run: npx playwright test --grep "@smoke"
