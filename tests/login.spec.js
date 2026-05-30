@@ -28,7 +28,7 @@ test.describe('Login Tests', () => {
 
                 await loginPage.login(
                     data.username,
-                    data.password
+                    process.env.SAUCE_PASSWORD
                 );
 
                 if (data.expected === 'success') {

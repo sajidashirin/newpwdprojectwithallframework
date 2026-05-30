@@ -59,7 +59,7 @@ jobs:
 
         env:
           TEST_ENV: ${{ github.event.inputs.environment }}
-
+          SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
         run: npx playwright test
 
       - name: Upload Playwright Report
