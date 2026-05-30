@@ -26,9 +26,14 @@ test.describe('Login Tests', () => {
 
                 Logger.info('Performing login');
 
+                console.log(
+                "Password available:",
+                process.env.SAUCE_PASSWORD ? "YES" : "NO"
+                );
+
                 await loginPage.login(
                     data.username,
-                    data.password
+                    process.env.SAUCE_PASSWORD
                 );
 
                 if (data.expected === 'success') {

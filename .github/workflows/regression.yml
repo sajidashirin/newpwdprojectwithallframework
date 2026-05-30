@@ -32,4 +32,6 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Regression Tests
+        env:
+            SAUCE_PASSWORD: ${{ secrets.SAUCE_PASSWORD }}
         run: npx playwright test --grep "@regression"
