@@ -6,6 +6,7 @@ const DashboardPage = require('../pages/DashboardPage');
 const Logger = require('../utils/logger');
 const Helpers = require('../utils/helpers');
 
+const credentials = require('../config/credentials');
 const testData = require('../data/loginData.json');
 
 
@@ -33,7 +34,7 @@ test.describe('Login Tests', () => {
 
                 await loginPage.login(
                     data.username,
-                    process.env.SAUCE_PASSWORD
+                    credentials.password
                 );
 
                 if (data.expected === 'success') {
